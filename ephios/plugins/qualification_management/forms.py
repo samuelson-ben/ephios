@@ -25,11 +25,14 @@ from ephios.plugins.qualification_management.importing import (
 class QualificationForm(forms.ModelForm):
     class Meta:
         model = Qualification
-        fields = ["title", "uuid", "abbreviation", "category", "includes"]
+        fields = ["title", "uuid", "abbreviation", "category", "includes", "expiration_time_years"]
         widgets = {"includes": Select2MultipleWidget}
         help_texts = {
             "uuid": _(
                 "Used to identify qualifications accross the ephios ecosystem. Only change if you know what you are doing."
+            ),
+            "expiration_time_years": _(
+                "If no expiration time leave empty."
             )
         }
 
