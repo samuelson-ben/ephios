@@ -294,6 +294,7 @@ class Qualification(Model):
         symmetrical=False,
         blank=True,
     )
+    expiration_time_years = models.IntegerField(_("expiration time years"), blank=True, null=True)
     is_imported = models.BooleanField(verbose_name=_("imported"), default=True)
 
     objects = QualificationManager()
